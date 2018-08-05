@@ -26,8 +26,13 @@ public class ExampleLinkedList {
 
 
     @Data
-    @AllArgsConstructor
-    private class Node {
+   // @AllArgsConstructor
+    private class Node<T> {
+        public Node(Object data, Node next) {
+            this.data = data;
+            this.next = next;
+        }
+
         private Object data;
         private Node next;
     }
