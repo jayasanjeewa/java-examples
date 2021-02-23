@@ -1,6 +1,7 @@
 package com.example.map;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class MapOperations {
 
@@ -11,6 +12,12 @@ public class MapOperations {
         int [] intValues = {2,4,5,7,3, 7};
 
         Map mapReturned = mapOperations.createHashMap(intValues);
+
+        System.out.println("before sort: "+ mapReturned);
+
+        mapReturned = mapOperations.sortMap(mapReturned);
+
+        System.out.println("after sort: "+ mapReturned);
 
         mapReturned = Collections.synchronizedMap(mapReturned);
 
@@ -48,6 +55,16 @@ Random random = new Random(52);
         }
 
         return map;
+    }
+
+    public Map sortMap(Map map) {
+       var sortedMap = new HashMap<>() ;
+
+      // map.entrySet().stream().sorted(Map.Entry.comparingByKey()).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue);
+              // Map.Entry::getKey, Map.Entry::getValue, (oldVal, newVal) -> oldVal, LinkedHashMap::new)
+       //);
+
+       return new LinkedHashMap(map);
     }
 
 }

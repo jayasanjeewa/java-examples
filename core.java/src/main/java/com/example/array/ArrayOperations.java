@@ -20,6 +20,8 @@ public class ArrayOperations {
     public int[] reverseArray(int[] arr) {
         int [] returnArray = Arrays.stream(arr).boxed().sorted(Collections.reverseOrder()).mapToInt(Integer::intValue).toArray();
 
+        returnArray = Arrays.stream(arr).boxed().sorted((o1, o2) -> o1.compareTo(o2)).mapToInt(Integer::intValue).toArray();
+
     return returnArray;
     }
 }
