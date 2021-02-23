@@ -1,9 +1,9 @@
 package com.example.datastructure.linkedlist;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+//import lombok.AllArgsConstructor;
+//import lombok.Data;
 
-@Data
+//@Data
 public class ExampleLinkedList {
     private Node head;
     private int counter;
@@ -25,7 +25,7 @@ public class ExampleLinkedList {
     }
 
 
-    @Data
+ //   @Data
    // @AllArgsConstructor
     private class Node<T> {
         public Node(Object data, Node next) {
